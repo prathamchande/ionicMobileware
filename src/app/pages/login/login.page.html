@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <img src="assets/logo.png" alt="Logo" class="logo">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="login-container">
+    <div class="login-card">
+      <img src="assets/logo.png" alt="Logo" class="logo">
+
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="input-field">
+          <ion-label position="stacked">Username</ion-label>
+          <ion-input formControlName="username" type="text"></ion-input>
+        </div>
+        <div class="input-field">
+          <ion-label position="stacked">Password</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+        </div>
+        <ion-button class="login-button" type="submit">Login</ion-button>
+      </form>
+
+      <a routerLink="/register" class="register-link">Register</a>
+      <a routerLink="/forgot-password" class="forgot-password">Forgot Password</a>
+
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    </div>
+  </div>
+</ion-content>

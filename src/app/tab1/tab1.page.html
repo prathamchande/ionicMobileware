@@ -1,0 +1,27 @@
+<app-header [title]="'abc'"></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+
+    <ion-radio-group *ngIf="langArr" [(ngModel)]="defaultLang" (ionChange)="selectLang($event)">
+      <ion-item *ngFor="let item of langArr;let i = index;">
+        <ion-label>{{item.text}}</ion-label>
+        <ion-label>{{item.value}}</ion-label>
+        <ion-radio [value]="item.value"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+  <ion-item>{{'sites.title' | translate}} {{'sites.description' | translate}}</ion-item>
+
+  <div id="container">
+
+    <ion-list [inset]="true">
+      <ion-item>
+        <ion-toggle [(ngModel)]="themeToggle" (ionChange)="toggleChange($event)" justify="space-between">Dark
+          Mode</ion-toggle>
+      </ion-item>
+    </ion-list>
+    <ion-button (click)="login()">Click me!</ion-button>
+  </div>
+<app-cards></app-cards>
+</ion-content>
