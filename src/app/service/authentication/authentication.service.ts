@@ -5,7 +5,7 @@ import { User } from 'src/app/interfaces/loginuser.interface';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  private users = [
+   users:User[] = [
     { username: 'username', password: 'password' },
    
   ];

@@ -13,7 +13,6 @@ export class Tab1Page {
   defaultLang: any;
   constructor(private languageService: LanguageService,private routeTo:Router) {}
   ngOnInit() {
-    debugger
     this.langArr = this.languageService.getLanguage();
     this.defaultLang = this.languageService.selected;
   }
@@ -33,7 +32,6 @@ export class Tab1Page {
   }
 
   login(){
-    debugger
     this.routeTo.navigate(['/login']);
   }
 }
