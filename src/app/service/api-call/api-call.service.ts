@@ -19,13 +19,11 @@ export class ApiCallService {
   }
 
   encryptMessage(message: string, key: string, iv: string): string {
-    debugger
     const cipherText = CryptoJS.AES.encrypt(message, key, { iv: iv }).toString();
     return cipherText;
   }
 
   decryptMessage(cipherText: string, key: string, iv: string): string {
-    debugger
     const decryptedMessage = CryptoJS.AES.decrypt(cipherText, key, { iv: iv }).toString(CryptoJS.enc.Utf8);
     return decryptedMessage;
   }
