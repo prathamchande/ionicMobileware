@@ -15,14 +15,12 @@ export class SigninPage implements OnInit {
   selectedTab: string = 'mPIN';
   customerId: string = '';
   password: string = '';
+  mPIN: string = '';
+  mpinInputElements: HTMLInputElement[] = [];
+  currentInputIndex: number = 0;
 
-  mPIN: string[] = ['', '', '', '', '', '']; // Initialize an array to store individual digits
-  selectedMPIN: number = 0; // Track the selected digit
-
-
-
-  selectMPIN(index: number) {
-    this.selectedMPIN = index;
+  ngAfterViewInit() {
+    this.mpinInputElements = Array.from(document.querySelectorAll('.mpin-input'));
   }
 
 
@@ -36,6 +34,17 @@ export class SigninPage implements OnInit {
 
   register(){
     // Implement your register logic here
+  }
+
+  onMPINInput(event: any) {
+    const input = event.target;
+    if (this.currentInputIndex < 6) {
+      this.mPIN = this.mPIN.substr(0, this.currentInputIndex) + event.data + this.mPIN.substr(this.currentInputIndex);
+      this.currentInputIndex++;
+      if (this.currentInputIndex < 6) {
+        this.mpinInputElements[this.currentInputIndex].focus();
+      }
+    }
   }
 
 }
