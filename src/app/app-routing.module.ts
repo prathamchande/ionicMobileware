@@ -5,8 +5,13 @@ import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () => import('./pages/signin/signin.module').then( m => m.SigninPageModule)
   },
+ 
+  // {
+  //   path: '',
+  //   loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  // },
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
@@ -16,7 +21,12 @@ const routes: Routes = [
     path: 'dashboard',
     loadChildren: () => import('./pages/dashboard/dashboard.module').then( m => m.DashboardPageModule),
     canActivate: [AuthGuard]
-  }
+  },
+  // {
+  //   path: 'signin',
+  //   loadChildren: () => import('./pages/signin/signin.module').then( m => m.SigninPageModule)
+  // }
+
 ];
 @NgModule({
   imports: [

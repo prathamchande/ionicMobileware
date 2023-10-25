@@ -1,0 +1,64 @@
+
+
+<ion-content [fullscreen]="true">
+  <main class="main_section">
+
+    <!-- section first -->
+    <div class="top_section">
+      <div class="left_section">
+        <img src="../../../assets/images/logo.png" alt="logo">
+      </div>
+
+      <div class="right_section">
+        <ion-button class="registerButton"  (click)="register()" expand="block">Register Now</ion-button>
+      </div>
+    </div>
+
+     <!-- section two -->
+<div class="user_logo_sec">
+  <div class="logo_img"><img src="../../../assets/images/userlogo.png" alt=""></div>
+
+  <div class="name_user">Hi, Sumantha</div>
+</div>
+
+     <!-- section three -->
+    <div class="login_sec">
+      <div class="card">
+        <ul class="nav">
+          <li class="nav-item" (click)="selectTab('mPIN')" [ngClass]="{ 'active': selectedTab === 'mPIN' }">MPIN</li>
+          <li class="nav-item" (click)="selectTab('Internet Banking')" [ngClass]="{ 'active': selectedTab === 'Internet Banking' }">INTERNET BANKING</li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane" [ngClass]="{ 'active-tab': selectedTab === 'mPIN' }">
+            <div class="mpin-input-container">
+              <input type="text" class="bottom-border-input" [(ngModel)]="mPIN[0]" (input)="onMPINInput(0)" [ngClass]="{ 'active': selectedMPIN === 0 }" id="mpin-input-0">
+              <input type="text" class="bottom-border-input" [(ngModel)]="mPIN[1]" (input)="onMPINInput(1)" [ngClass]="{ 'active': selectedMPIN === 1 }" id="mpin-input-1">
+              <input type="text" class="bottom-border-input" [(ngModel)]="mPIN[2]" (input)="onMPINInput(2)" [ngClass]="{ 'active': selectedMPIN === 2 }" id="mpin-input-2">
+              <input type="text" class="bottom-border-input" [(ngModel)]="mPIN[3]" (input)="onMPINInput(3)" [ngClass]="{ 'active': selectedMPIN === 3 }" id="mpin-input-3">
+              <input type="text" class="bottom-border-input" [(ngModel)]="mPIN[4]" (input)="onMPINInput(4)" [ngClass]="{ 'active': selectedMPIN === 4 }" id="mpin-input-4">
+              <input type="text" class="bottom-border-input" [(ngModel)]="mPIN[5]" (input)="onMPINInput(5)" [ngClass]="{ 'active': selectedMPIN === 5 }" id="mpin-input-5">
+            </div>
+            <a href="#" class="forgot_link">Forgot Mpin</a>
+          </div>
+          <div class="tab-pane" [ngClass]="{ 'active-tab': selectedTab === 'Internet Banking' }">
+            <input type="text" [(ngModel)]="customerId" placeholder="Customer ID" class="bottom-border-input">
+            <input type="password" [(ngModel)]="password" placeholder="Password" class="bottom-border-input">
+          
+            <!-- <button (click)="login()">Login</button> -->
+            <ion-button class="registerButton"  (click)="login()" expand="block">Login</ion-button>
+            <a href="#" class="forgot_link">Forgot Internet banking Credentials</a>
+          </div>
+        </div>
+      </div>
+      
+      
+    </div>
+
+
+       <!-- section four -->
+
+       <div class="bio_matric_logo">
+        <img src="../../../assets/images/thumb.png" alt="">
+       </div>
+  </main>
+</ion-content>
