@@ -114,6 +114,16 @@ ion-content {
                         display: flex;
                     }
 
+                    .mpin-input-container {
+                        display: flex;
+                        gap: 5px;
+                        margin: 10px 0;
+                        input{
+                            width: 20px;
+                        }
+                      }
+  
+                      
                     .bottom-border-input {
                         border: none;
                         border-bottom: 1px solid #ffafb8;
@@ -156,3 +166,5 @@ ion-content {
         }
     }
 }
+
+

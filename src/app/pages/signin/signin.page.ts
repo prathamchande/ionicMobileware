@@ -15,13 +15,33 @@ export class SigninPage implements OnInit {
   selectedTab: string = 'mPIN';
   customerId: string = '';
   password: string = '';
-  mPIN: string = '';
   mpinInputElements: HTMLInputElement[] = [];
   currentInputIndex: number = 0;
 
-  ngAfterViewInit() {
-    this.mpinInputElements = Array.from(document.querySelectorAll('.mpin-input'));
+
+  mPIN: string[] = ['', '', '', '', '', ''];
+  selectedMPIN: number = 0;
+
+
+  onMPINInput(index: number) {
+    if (this.mPIN[index] && /^[0-9]$/.test(this.mPIN[index])) {
+      this.selectedMPIN = index < 5 ? index + 1 : 5;
+      if (index < 5) {
+        this.focusNextInput(index + 1);
+      }
+    }
   }
+
+  focusNextInput(index: number) {
+    if (index >= 0 && index < 6) {
+      const inputElement = document.getElementById(`mpin-input-${index}`);
+      if (inputElement) {
+        inputElement.focus();
+      }
+    }
+  }
+
+
 
 
   selectTab(tab: string) {
@@ -36,16 +56,16 @@ export class SigninPage implements OnInit {
     // Implement your register logic here
   }
 
-  onMPINInput(event: any) {
-    const input = event.target;
-    if (this.currentInputIndex < 6) {
-      this.mPIN = this.mPIN.substr(0, this.currentInputIndex) + event.data + this.mPIN.substr(this.currentInputIndex);
-      this.currentInputIndex++;
-      if (this.currentInputIndex < 6) {
-        this.mpinInputElements[this.currentInputIndex].focus();
-      }
-    }
-  }
+  // onMPINInput(event: any) {
+  //   const input = event.target;
+  //   if (this.currentInputIndex < 6) {
+  //     this.mPIN = this.mPIN.substr(0, this.currentInputIndex) + event.data + this.mPIN.substr(this.currentInputIndex);
+  //     this.currentInputIndex++;
+  //     if (this.currentInputIndex < 6) {
+  //       this.mpinInputElements[this.currentInputIndex].focus();
+  //     }
+  //   }
+  // }
 
 }
 

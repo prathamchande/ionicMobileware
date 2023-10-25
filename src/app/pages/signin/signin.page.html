@@ -31,7 +31,12 @@
         <div class="tab-content">
           <div class="tab-pane" [ngClass]="{ 'active-tab': selectedTab === 'mPIN' }">
             <div class="mpin-input-container">
-              <input type="text" [(ngModel)]="mPIN" class="mpin-input" (input)="onMPINInput($event)">
+              <input type="text" class="bottom-border-input" [(ngModel)]="mPIN[0]" (input)="onMPINInput(0)" [ngClass]="{ 'active': selectedMPIN === 0 }" id="mpin-input-0">
+              <input type="text" class="bottom-border-input" [(ngModel)]="mPIN[1]" (input)="onMPINInput(1)" [ngClass]="{ 'active': selectedMPIN === 1 }" id="mpin-input-1">
+              <input type="text" class="bottom-border-input" [(ngModel)]="mPIN[2]" (input)="onMPINInput(2)" [ngClass]="{ 'active': selectedMPIN === 2 }" id="mpin-input-2">
+              <input type="text" class="bottom-border-input" [(ngModel)]="mPIN[3]" (input)="onMPINInput(3)" [ngClass]="{ 'active': selectedMPIN === 3 }" id="mpin-input-3">
+              <input type="text" class="bottom-border-input" [(ngModel)]="mPIN[4]" (input)="onMPINInput(4)" [ngClass]="{ 'active': selectedMPIN === 4 }" id="mpin-input-4">
+              <input type="text" class="bottom-border-input" [(ngModel)]="mPIN[5]" (input)="onMPINInput(5)" [ngClass]="{ 'active': selectedMPIN === 5 }" id="mpin-input-5">
             </div>
             <a href="#" class="forgot_link">Forgot Mpin</a>
           </div>
