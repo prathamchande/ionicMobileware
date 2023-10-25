@@ -1,0 +1,52 @@
+
+
+<ion-content [fullscreen]="true">
+  <main class="main_section">
+
+    <!-- section first -->
+    <div class="top_section">
+      <div class="left_section">
+        <img src="../../../assets/images/logo.png" alt="logo">
+      </div>
+
+      <div class="right_section">
+        <ion-button class="registerButton"  (click)="register()" expand="block">Register Now</ion-button>
+      </div>
+    </div>
+
+     <!-- section two -->
+<div class="user_logo_sec">
+  <div class="logo_img"><img src="../../../assets/images/userlogo.png" alt=""></div>
+
+  <div class="name_user">Hi, Sumantha</div>
+</div>
+
+     <!-- section three -->
+    <div class="login_sec">
+      <div class="card">
+        <ul class="nav">
+          <li class="nav-item" (click)="selectTab('mPIN')" [ngClass]="{ 'active': selectedTab === 'mPIN' }">MPIN</li>
+          <li class="nav-item" (click)="selectTab('Internet Banking')" [ngClass]="{ 'active': selectedTab === 'Internet Banking' }">INTERNET BANKING</li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane" [ngClass]="{ 'active-tab': selectedTab === 'mPIN' }">
+            <div class="mpin-input-container">
+              <input type="text" [(ngModel)]="mPIN" class="mpin-input" (input)="onMPINInput($event)">
+            </div>
+            <a href="#" class="forgot_link">Forgot Mpin</a>
+          </div>
+          <div class="tab-pane" [ngClass]="{ 'active-tab': selectedTab === 'Internet Banking' }">
+            <input type="text" [(ngModel)]="customerId" placeholder="Customer ID" class="bottom-border-input">
+            <input type="password" [(ngModel)]="password" placeholder="Password" class="bottom-border-input">
+          
+            <!-- <button (click)="login()">Login</button> -->
+            <ion-button class="registerButton"  (click)="login()" expand="block">Login</ion-button>
+            <a href="#" class="forgot_link">Forgot Internet banking Credentials</a>
+          </div>
+        </div>
+      </div>
+      
+      
+    </div>
+  </main>
+</ion-content>
