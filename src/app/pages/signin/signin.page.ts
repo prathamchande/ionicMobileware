@@ -15,10 +15,6 @@ export class SigninPage implements OnInit {
   selectedTab: string = 'mPIN';
   customerId: string = '';
   password: string = '';
-  mpinInputElements: HTMLInputElement[] = [];
-  currentInputIndex: number = 0;
-
-
   mPIN: string[] = ['', '', '', '', '', ''];
   selectedMPIN: number = 0;
 
