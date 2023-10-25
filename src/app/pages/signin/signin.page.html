@@ -23,7 +23,7 @@
 
      <!-- section three -->
     <div class="login_sec">
-      <div class="card">
+      <div class="card_main_log">
         <ul class="nav">
           <li class="nav-item" (click)="selectTab('mPIN')" [ngClass]="{ 'active': selectedTab === 'mPIN' }">MPIN</li>
           <li class="nav-item" (click)="selectTab('Internet Banking')" [ngClass]="{ 'active': selectedTab === 'Internet Banking' }">INTERNET BANKING</li>
@@ -60,5 +60,22 @@
        <div class="bio_matric_logo">
         <img src="../../../assets/images/thumb.png" alt="">
        </div>
+
+
+    <!-- section five -->
+<div class="card_main_log_wrap">
+
+  <div class="card_main_log">
+    <div class="card_view" *ngFor="let block of blocks; let i = index">
+      <div class="img_block">
+        <img [src]="block.imageUrl" alt="Image {{i + 1}}">
+      </div>
+      <div class="bottom_text">{{ block.text }}</div>
+    </div>
+
+  
+   </div>
+</div>
+
   </main>
 </ion-content>
