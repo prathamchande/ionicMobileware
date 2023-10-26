@@ -1,6 +1,14 @@
 .slider_box{
     border-radius: 16px;
     overflow: hidden;
-    margin: 10px;
+    margin: 20px 18px 5px;
     max-height: 100px;
+
+}
+
+.main_swiper{
+    --swiper-navigation-size: 20px;
+    --swiper-navigation-top-offset: 43%;
+    --swiper-navigation-sides-offset: 0px;
+    --swiper-navigation-color: #9E9E9E;
 }
