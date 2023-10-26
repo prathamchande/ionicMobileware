@@ -8,12 +8,14 @@ import { SigninPageRoutingModule } from './signin-routing.module';
 
 import { SigninPage } from './signin.page';
 import { CardsComponent } from 'src/app/sharedComponent/cards/cards.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    ReactiveFormsModule,
     SigninPageRoutingModule
   ],
   declarations: [SigninPage,CardsComponent]
