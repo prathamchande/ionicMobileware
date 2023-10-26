@@ -37,24 +37,24 @@
               <input type="text" class="bottom-border-input" [(ngModel)]="mPIN[3]" (input)="onMPINInput(3)" [ngClass]="{ 'active': selectedMPIN === 3 }" id="mpin-input-3">
               <input type="text" class="bottom-border-input" [(ngModel)]="mPIN[4]" (input)="onMPINInput(4)" [ngClass]="{ 'active': selectedMPIN === 4 }" id="mpin-input-4">
               <input type="text" class="bottom-border-input" [(ngModel)]="mPIN[5]" (input)="onMPINInput(5)" [ngClass]="{ 'active': selectedMPIN === 5 }" id="mpin-input-5"> -->
-              <ion-row>
+              <ion-row class="digit-center">
                 <ion-col size="1.5">
-                  <ion-input class="bottom-border-input" #otp1 required="true" maxLength="1" [(ngModel)]="OTP[0]" (keyup)="otpController($event,otp2,'')"></ion-input>
+                  <ion-input type="tel" mode="ios" class="bottom-border-input" #otp1 required="true" maxLength="1" [(ngModel)]="t1" (ionChange)="checkEvent()" (keyup)="otpController($event,otp2,'')"></ion-input>
                 </ion-col>
                 <ion-col size="1.5">
-                  <ion-input class="bottom-border-input" #otp2 required="true" maxLength="1" [(ngModel)]="OTP[1]" (keyup)="otpController($event,otp3,otp1)"></ion-input>
+                  <ion-input type="tel" mode="ios" class="bottom-border-input" #otp2 required="true" maxLength="1" [(ngModel)]="t2" (ionChange)="checkEvent()" (keyup)="otpController($event,otp3,otp1)"></ion-input>
                 </ion-col>
                 <ion-col size="1.5">
-                  <ion-input class="bottom-border-input" #otp3 required="true" maxLength="1" [(ngModel)]="OTP[2]" (keyup)="otpController($event,otp4,otp2)"></ion-input>
+                  <ion-input type="tel" mode="ios" class="bottom-border-input" #otp3 required="true" maxLength="1" [(ngModel)]="t3" (ionChange)="checkEvent()" (keyup)="otpController($event,otp4,otp2)"></ion-input>
                 </ion-col>
                 <ion-col size="1.5">
-                  <ion-input class="bottom-border-input" #otp4 required="true" maxLength="1" [(ngModel)]="OTP[3]" (keyup)="otpController($event,otp5,otp3)"></ion-input>
+                  <ion-input type="tel" mode="ios" class="bottom-border-input" #otp4 required="true" maxLength="1" [(ngModel)]="t4" (ionChange)="checkEvent()"  (keyup)="otpController($event,otp5,otp3)"></ion-input>
                 </ion-col>
                 <ion-col size="1.5">
-                  <ion-input class="bottom-border-input" #otp5 required="true" maxLength="1" [(ngModel)]="OTP[4]" (keyup)="otpController($event,otp6,otp4)"></ion-input>
+                  <ion-input type="tel" mode="ios" class="bottom-border-input" #otp5 required="true" maxLength="1" [(ngModel)]="t5" (ionChange)="checkEvent()"  (keyup)="otpController($event,otp6,otp4)"></ion-input>
                 </ion-col>
                 <ion-col size="1.5">
-                  <ion-input class="bottom-border-input active" #otp6 required="true" maxLength="1" [(ngModel)]="OTP[5]" (keyup)="otpController($event,'',otp5)"></ion-input>
+                  <ion-input type="tel" mode="ios" class="bottom-border-input active" #otp6 required="true" maxLength="1" [(ngModel)]="t6" (ionChange)="checkEvent()"  (keyup)="otpController($event,'',otp5)"></ion-input>
                 </ion-col>
               </ion-row>
               
@@ -82,6 +82,23 @@
        <div class="bio_matric_logo">
         <img src="../../../assets/images/thumb.png" alt="">
        </div>
+
+     
+       <app-cards></app-cards>
+
+       <!-- <div class="card_main_log_wrap">
+
+        <div class="card_main_log">
+          <div class="card_view" *ngFor="let block of cardBlock; let i = index">
+            <div class="img_block">
+              <img [src]="block.imageUrl" alt="Image {{i + 1}}">
+            </div>
+            <div class="bottom_text">{{ block.text }}</div>
+          </div>
+      
+        
+         </div>
+      </div> -->
 
   </main>
 

@@ -1,0 +1,46 @@
+  // section five
+  .card_main_log_wrap {
+      margin-top: 28px;
+      padding: 0 32px;
+
+      .card_main_log {
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: space-between;
+          padding: 14px 10px;
+          background: #00000070;
+          border-radius: 20px;
+         margin: 0 auto;
+    
+
+
+          .card_view {
+              text-align: center;
+              flex: 1 0 25.33%;
+              margin: 10px;
+              display: flex;
+              flex-flow: column;
+              align-items: center;
+
+              .img_block {
+                  background-color: #fff;
+                  padding: 5px;
+                  border-radius: 8px;
+                  max-width: 64px;
+
+                  img {
+                      max-width: 100%;
+                  }
+              }
+
+              .bottom_text {
+                  color: #fff;
+                  margin-top: 12px;
+                  font-size: 12px;
+                  font-weight: 600;
+                  max-width: 64px;
+              }
+
+          }
+      }
+  }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ConstantsService } from 'src/app/service/constants/constants.service';
 
 @Component({
   selector: 'app-signin',
@@ -10,6 +11,7 @@ export class SigninPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
   selectedTab: string = 'mPIN';
@@ -18,54 +20,60 @@ export class SigninPage implements OnInit {
   mPIN: string[] = ['', '', '', '', '', ''];
   selectedMPIN: number = 0;
 
+  public t1: any;
+  public t2: any;
+  public t3: any;
+  public t4: any;
+  public t5: any;
+  public t6: any;
 
-  blocks: { imageUrl: string; text: string }[] = [
-    {
-      imageUrl: '../../../assets/images/upi.png',
-      text: 'Contact us'
-    },
-    {
-      imageUrl: '../../../assets/images/thumb.png',
-      text: 'Apply for Loan'
-    },
-    {
-      imageUrl: '../../../assets/images/userlogo.png',
-      text: 'Quick view balance'
-    },
-    {
-      imageUrl: '../../../assets/images/upi.png',
-      text: 'Digital Account Opening'
-    },
-    {
-      imageUrl: '../../../assets/images/upi.png',
-      text: 'UPI'
-    },
-    {
-      imageUrl: '../../../assets/images/upi.png',
-      text: 'More...'
-    }
-  ];
+  @ViewChild('key1', { static: false }) otp1;
+  @ViewChild('key5', { static: false }) otp5;
+  @ViewChild('key6', { static: false }) otp6;
+ 
 
   
-  onMPINInput(index: number) {
-    if (this.mPIN[index] && /^[0-9]$/.test(this.mPIN[index])) {
-      this.selectedMPIN = index < 5 ? index + 1 : 5;
-      if (index < 5) {
-        this.focusNextInput(index + 1);
-      }
+  // onMPINInput(index: number) {
+  //   if (this.mPIN[index] && /^[0-9]$/.test(this.mPIN[index])) {
+  //     this.selectedMPIN = index < 5 ? index + 1 : 5;
+  //     if (index < 5) {
+  //       this.focusNextInput(index + 1);
+  //     }
+  //   }
+  // }
+
+  // focusNextInput(index: number) {
+  //   if (index >= 0 && index < 6) {
+  //     const inputElement = document.getElementById(`mpin-input-${index}`);
+  //     if (inputElement) {
+  //       inputElement.focus();
+  //     }
+  //   }
+  // }
+
+  checkEvent() {
+    var t = this.t1 + "";
+    var temp = t.split('');
+  
+    if (temp.length == 6) {
+      this.t1 = parseInt(temp[0])
+      this.t2 = parseInt(temp[1])
+      this.t3 = parseInt(temp[2])
+      this.t4 = parseInt(temp[3])
+      this.t5 = parseInt(temp[4])
+      this.t6 = parseInt(temp[5])
+      this.otp6.setFocus();
+    }
+
+    if ((this.t1 + "" + this.t2 + this.t3 + this.t4 + this.t5 + this.t6).length == 6) {
+     
+      return true;
+    }
+    else {
+     
+      return false;
     }
   }
-
-  focusNextInput(index: number) {
-    if (index >= 0 && index < 6) {
-      const inputElement = document.getElementById(`mpin-input-${index}`);
-      if (inputElement) {
-        inputElement.focus();
-      }
-    }
-  }
-
-
 
 
   selectTab(tab: string) {
