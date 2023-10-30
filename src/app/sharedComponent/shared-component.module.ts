@@ -6,15 +6,16 @@ import { IonicModule } from '@ionic/angular';
 import { HeaderComponent } from './header/header.component';
 import { ImgswiperComponent } from './imgswiper/imgswiper.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FooterComponent } from './footer/footer.component';
 
 
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, ImgswiperComponent],
+  declarations: [HeaderComponent, ImgswiperComponent,FooterComponent],
   imports: [ CommonModule, FormsModule, IonicModule],
-  exports:[HeaderComponent, ImgswiperComponent],
+  exports:[HeaderComponent, ImgswiperComponent,FooterComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA]
   
 })

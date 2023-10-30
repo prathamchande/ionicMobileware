@@ -24,7 +24,7 @@ export class SigninPage implements OnInit {
   public t6: any;
 
   
-   activetabs: any = 1;
+ 
   @ViewChild('key1', { static: false }) otp1;
   @ViewChild('key5', { static: false }) otp5;
   @ViewChild('key6', { static: false }) otp6;
@@ -58,9 +58,7 @@ export class SigninPage implements OnInit {
     
   }
 
-  tabs(val){
-    this.activetabs  = val;
-  }
+
   
   checkEvent() {
     var t = this.t1 + "";
