@@ -1,3 +1,14 @@
-<p>
-  cards works!
-</p>
+ <div class="card_main_log_wrap">
+
+  <div class="card_main_log">
+    <div class="card_view" *ngFor="let block of cardBlock; let i = index">
+      <div class="img_block">
+        <img [src]="block.imageUrl" alt="Image {{i + 1}}">
+      </div>
+      <div class="bottom_text">{{ block.text }}</div>
+    </div>
+
+  
+   </div>
+</div> 
+

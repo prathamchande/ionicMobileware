@@ -21,6 +21,6 @@ import { CardsComponent } from '../sharedComponent/cards/cards.component';
     TranslateModule,
     SharedComponentModule
  ],
-  declarations: [Tab1Page,CardsComponent]
+  declarations: [Tab1Page]
 })
 export class Tab1PageModule {}
